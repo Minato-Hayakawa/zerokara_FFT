@@ -1,5 +1,5 @@
 #define N 100
-
+#include <math.h>
 typedef struct {
     double real;
     double image;
