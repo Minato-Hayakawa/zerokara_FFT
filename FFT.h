@@ -5,5 +5,10 @@ typedef struct {
     double image;
 } complex;
 
-complex FFT(complex &in);
-complex inverse_FFT(complex &in);
+typedef struct{
+    int head;
+    complex data[N];
+} stack;
+
+stack FFT(stack &in);
+stack inverse_FFT(stack &in);
