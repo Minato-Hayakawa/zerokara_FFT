@@ -10,6 +10,8 @@ typedef struct {
     double data[N];
 } stack;
 
-void init(stack data);
-stack push(stack data);
-stack pop(stack data);
+void init(stack &data);
+stack push(stack &data);
+stack pop(stack &data);
+
+stack FFT(stack &data);
