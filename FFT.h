@@ -11,3 +11,4 @@ typedef struct {
 } stack;
 
 void init(stack data);
+stack push(stack data);
