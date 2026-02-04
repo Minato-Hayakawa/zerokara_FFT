@@ -1,4 +1,13 @@
+#define N 100
+
 typedef struct {
     double real;
     double image;
 } complex;
+
+typedef struct {
+    int head;
+    double data[N];
+} stack;
+
+void init(stack data);
