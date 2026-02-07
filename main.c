@@ -2,6 +2,7 @@
 int main() {
 
     int n = 8;
+
     stack *in = malloc(sizeof(stack));
     in->head = n;
 
