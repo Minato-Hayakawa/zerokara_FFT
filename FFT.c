@@ -49,7 +49,10 @@ stack *FFT(stack *in){
     }
 
     if (in -> head ==1){
-        return in;
+        stack *out = malloc(sizeof(stack));
+        out->head = 1;
+        out->data[0] = in->data[0];
+        return out;
     }
     else if (in -> head != 1){
         stack *even_result = FFT(even);
