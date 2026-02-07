@@ -13,6 +13,18 @@ stack DFT(stack *in){
     return out;
 }
 
+stack iDFT(stack *in){
+    stack out;
+    for (int i=0; i< in -> head; i++){
+        out.data[i].real = 0;
+        out.data[i].image = 0;
+        for (int j=0; j< in -> head; j++){
+            out.data[i].real += in->data[j].real * cos(2 * M_PI * i * j / in -> head) / in -> head;
+            out.data[i].image += in->data[j].image * sin(2 * M_PI * i * j / in -> head) / in -> head;
+        }
+    } return out;
+}
+
 stack *saparate(stack *in){
     stack out;
     int n = in -> head;

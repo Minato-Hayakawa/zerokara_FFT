@@ -11,6 +11,7 @@ typedef struct{
 } stack;
 
 stack DFT(stack *in);
+stack iDFT(stack *in);
 stack *saparate(stack *in);
 stack FFT(stack *in);
 stack inverse_FFT(stack *in);
