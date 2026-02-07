@@ -26,12 +26,13 @@ stack iDFT(stack *in){
 }
 
 stack *saparate(stack *in){
-    stack out;
+    stack *out = malloc(sizeof(stack));
+    out -> head = in -> head / 2;
     int n = in -> head;
     for (int i=0; i < n / 2 ; i++){
-        out.data[i] = in -> data[2 * i];
-        out.data[i + n/2] = in -> data[2 * i + 1];
-    }return &out;
+        out -> data[i] = in -> data[2 * i];
+        out -> data[i + n/2] = in -> data[2 * i + 1];
+    }return out;
 }
 
 stack *FFT(stack *in){
