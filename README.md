@@ -86,7 +86,7 @@ data[6]: -100.000000 + 0.000000i
 data[7]: -70.710678 + 0.000000i
 ```
 
-###FFT Result
+### FFT Result
 
 ```bush
 result[0]: 0.000000 + 0.000000i
@@ -99,5 +99,5 @@ result[6]: 0.000000 + 0.000000i
 result[7]: -0.000000 + 400.000000i
 ```
 
-##6 Author
+## 6. Author
 Minato Hayakawa - TMCIT
