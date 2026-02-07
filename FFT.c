@@ -62,5 +62,6 @@ stack *FFT(stack *in){
         out -> data[i + out -> head / 2].real = even_real - odd_real;
         out -> data[i + out -> head / 2].image = even_image - odd_image;
     }
+    free(saparated);
     return out;
 }
