@@ -10,6 +10,7 @@ typedef struct{
     complex data[N];
 } stack;
 
-void saparate(stack &in);
-stack FFT(stack &in);
-stack inverse_FFT(stack &in);
+stack DFT(stack *in);
+stack *saparate(stack *in);
+stack FFT(stack *in);
+stack inverse_FFT(stack *in);
