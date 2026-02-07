@@ -76,4 +76,4 @@ result[6]: 0.000000 + 0.000000i
 result[7]: -0.000000 + 400.000000i
 
 6. Author
-[Your Name] - [Your University/Affiliation]
+Minato Hayakawa - TMCIT
