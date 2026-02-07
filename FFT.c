@@ -1,7 +1,7 @@
 #include "FFT.h"
 
 stack DFT(stack *in){
-    stack out;
+    stack out ;
     for (int i=0; i< in -> head; i++){
         out.data[i].real = 0;
         out.data[i].image = 0;
@@ -35,7 +35,7 @@ stack *saparate(stack *in){
 }
 
 stack *FFT(stack *in){
-    stack *out;
+    stack *out = malloc (sizeof(stack));
     stack *saparated;
 
     if (in -> head ==1);
