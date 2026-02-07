@@ -62,6 +62,9 @@ stack *FFT(stack *in){
             out -> data[i + out -> head / 2] = odd_result -> data[i];
         }
     }
+
+    free(even);
+    free(odd);
     for (int i=0; i < out-> head / 2; i++){
         double weight_real = cos(-2 * M_PI * i / out -> head);
         double weight_image = sin(-2 * M_PI * i / out -> head);
