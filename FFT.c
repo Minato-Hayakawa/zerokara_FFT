@@ -1,13 +1,14 @@
 #include "FFT.h"
 
-stack DFT(stack *in){
-    stack out ;
+stack *DFT(stack *in){
+    stack *out = malloc(sizeof(stack));
+    out->head = in->head;
     for (int i=0; i< in -> head; i++){
-        out.data[i].real = 0;
-        out.data[i].image = 0;
+        out->data[i].real = 0;
+        out->data[i].image = 0;
         for (int j=0; j< in -> head; j++){
-            out.data[i].real += in->data[j].real * cos(2 * M_PI * i * j / in -> head);
-            out.data[i].image += in->data[j].image * (-sin(2 * M_PI * i * j / in -> head));
+            out->data[i].real += in->data[j].real * cos(2 * M_PI * i * j / in -> head);
+            out->data[i].image += in->data[j].image * (-sin(2 * M_PI * i * j / in -> head));
         }
     }
     return out;

@@ -12,7 +12,7 @@ typedef struct{
     complex data[N];
 } stack;
 
-stack DFT(stack *in);
+stack *DFT(stack *in);
 stack iDFT(stack *in);
 stack *saparate(stack *in);
 stack *FFT(stack *in);
