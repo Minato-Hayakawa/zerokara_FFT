@@ -8,6 +8,7 @@ stack *saparate(stack *in){
     out.data[i + n/2] = in -> data[in -> head * 2 * i + 1];
     }return &out;
 }
+
 stack FFT(stack *in){
     stack *out;
     stack *weight;
@@ -18,7 +19,7 @@ stack FFT(stack *in){
     }
 
     for (int i = 1; i < N-1; i++){
-        weight.[i].real = in[i] * cos(2 * M_PI * t / i);
+        weight[i].real = in[i] * cos(2 * M_PI * t / i);
         weight[i].image = in[i] * (-sin(2 * M_PI * t / i));
     }
 }
