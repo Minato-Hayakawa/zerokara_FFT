@@ -37,17 +37,28 @@ stack *saparate(stack *in){
 stack FFT(stack *in){
     stack *out;
     stack *weight;
+    for (int i=0; i < in -> head; i++){
+        weight -> data[i].real = cos(-2 * M_PI * i / in -> head);
+        weight -> data[i].image = sin(-2 * M_PI * i / in -> head);
+    }
     if (in -> head ==1);
     else if (in -> head != 1){
         out = saparate(in);
         FFT(out);
     }
     for (int i=0; i < out-> head / 2; i++){
-        out -> data[i].real = out -> data[i].real +  out -> data[i + 1].real;
-        out -> data[i].image = out -> data[i].image + out -> data[i + 1].image;
+
+        double odd_real = out -> data[i + out -> head / 2].real * weight -> data[i].real
+        - out -> data[i + out -> head / 2].image * weight -> data[i].image;
+        double odd_image = out -> data[i + out -> head / 2].image * weight -> data[i].real
+        + out -> data[i + out -> head / 2].real * weight -> data[i].image;
+        double even_real = out -> data[i].real;
+        double even_image = out -> data[i].image;
+
+        out -> data[i].real = even_real + odd_real;
+        out -> data[i].image = even_image + odd_image;
+        out -> data[i + out -> head / 2].real = even_real - odd_real;
+        out -> data[i + out -> head / 2].image = even_image - odd_image;
     }
-    for (int i=out-> head / 2; i < out -> head; i++){
-        out -> data[i].real = out -> data[i].real -  out -> data[i + 1].real;
-        out -> data[i].image = out -> data[i].image - out -> data[i + 1].image;
-    }
+    return *out;
 }
