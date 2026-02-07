@@ -42,9 +42,12 @@ stack FFT(stack *in){
         out = saparate(in);
         FFT(out);
     }
-
-    for (int i = 1; i < N-1; i++){
-        weight[i].real = in[i] * cos(2 * M_PI * t / i);
-        weight[i].image = in[i] * (-sin(2 * M_PI * t / i));
+    for (int i=0; i < out-> head / 2; i++){
+        out -> data[i].real = out -> data[i].real +  out -> data[i + 1].real;
+        out -> data[i].image = out -> data[i].image + out -> data[i + 1].image;
+    }
+    for (int i=out-> head / 2; i < out -> head; i++){
+        out -> data[i].real = out -> data[i].real -  out -> data[i + 1].real;
+        out -> data[i].image = out -> data[i].image - out -> data[i + 1].image;
     }
 }
