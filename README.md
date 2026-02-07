@@ -66,9 +66,10 @@ The following test was performed using a sinusoidal input signal to verify the c
 
 **Input:**
 
-\[
-x_n = 100 \cdot \sin\left(\frac{2\pi \cdot 1 \cdot n}{N}\right), \quad N = 8
-\]
+The input signal is defined as:
+
+x_n = 100 * sin(2π * n / N),  where N = 8
+
 
 **Expected Output:**  
 Large magnitude components in the frequency domain at **k = 1** and **k = N − 1**.
