@@ -49,10 +49,10 @@ stack *FFT(stack *in){
         complex *weight = malloc (sizeof(complex));
         weight -> real = weight_real;
         weight -> image = weight_image;
-        double odd_real = out -> data[i + out -> head / 2].real * weight -> data[i].real
-        - out -> data[i + out -> head / 2].image * weight -> data[i].image;
-        double odd_image = out -> data[i + out -> head / 2].image * weight -> data[i].real
-        + out -> data[i + out -> head / 2].real * weight -> data[i].image;
+        double odd_real = out -> data[i + out -> head / 2].real * weight -> real
+        - out -> data[i + out -> head / 2].image * weight -> image;
+        double odd_image = out -> data[i + out -> head / 2].image * weight -> real
+        + out -> data[i + out -> head / 2].real * weight -> image;
         double even_real = out -> data[i].real;
         double even_image = out -> data[i].image;
 
@@ -61,5 +61,5 @@ stack *FFT(stack *in){
         out -> data[i + out -> head / 2].real = even_real - odd_real;
         out -> data[i + out -> head / 2].image = even_image - odd_image;
     }
-    return *out;
+    return out;
 }
