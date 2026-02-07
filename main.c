@@ -8,7 +8,7 @@ int main() {
     printf("--- Input Data ---\n");
     for (int i = 0; i < n; i++) {
 
-        in->data[i].real = 100 * sin(2 * M_PI * 50 * i / n);
+        in->data[i].real = 100 * sin(2 * M_PI * 1 * i / n);
         in->data[i].image = 0.0;
         printf("data[%d]: %f + %fi\n", i, in->data[i].real, in->data[i].image);
     }
