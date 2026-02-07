@@ -34,20 +34,21 @@ stack *saparate(stack *in){
     }return &out;
 }
 
-stack FFT(stack *in){
+stack *FFT(stack *in){
     stack *out;
-    stack *weight;
-    for (int i=0; i < in -> head; i++){
-        weight -> data[i].real = cos(-2 * M_PI * i / in -> head);
-        weight -> data[i].image = sin(-2 * M_PI * i / in -> head);
-    }
+    stack *saparated;
+
     if (in -> head ==1);
     else if (in -> head != 1){
-        out = saparate(in);
-        FFT(out);
+        saparated = saparate(in);
+        out = FFT(saparated);
     }
     for (int i=0; i < out-> head / 2; i++){
-
+        double weight_real = cos(-2 * M_PI * i / out -> head);
+        double weight_image = sin(-2 * M_PI * i / out -> head);
+        complex *weight = malloc (sizeof(complex));
+        weight -> real = weight_real;
+        weight -> image = weight_image;
         double odd_real = out -> data[i + out -> head / 2].real * weight -> data[i].real
         - out -> data[i + out -> head / 2].image * weight -> data[i].image;
         double odd_image = out -> data[i + out -> head / 2].image * weight -> data[i].real
