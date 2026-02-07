@@ -69,10 +69,7 @@ The following test was performed using a sinusoidal input signal to verify the c
 The input signal is defined as:
 
 $$
-x_n = 100  \sin(\frac{2 \pi  n  }{N})
-$$
-
-$$
+x_n = 100  \sin(\frac{2 \pi  n  }{N})\\
 N=8
 $$
 **Expected Output:**  
