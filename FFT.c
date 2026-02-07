@@ -29,8 +29,8 @@ stack *saparate(stack *in){
     stack out;
     int n = in -> head;
     for (int i=0; i < n / 2 ; i++){
-    out.data[i] = in -> data[in -> head * 2 * i];
-    out.data[i + n/2] = in -> data[in -> head * 2 * i + 1];
+        out.data[i] = in -> data[2 * i];
+        out.data[i + n/2] = in -> data[2 * i + 1];
     }return &out;
 }
 
