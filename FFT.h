@@ -1,6 +1,7 @@
 #define N 100
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 typedef struct {
     double real;
     double image;
