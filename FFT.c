@@ -44,6 +44,7 @@ stack *FFT(stack *in){
 
     even -> head = in -> head / 2;
     odd -> head = in -> head / 2;
+    out -> head = in -> head;
 
     for (int i=0; i < in -> head / 2; i++){
         even -> data[i] = in -> data[2 * i];
@@ -51,10 +52,10 @@ stack *FFT(stack *in){
     }
 
     if (in -> head ==1){
-        stack *out = malloc(sizeof(stack));
-        out->head = 1;
-        out->data[0] = in->data[0];
-        return out;
+        stack *node = malloc(sizeof(stack));
+        node->head = 1;
+        node->data[0] = in->data[0];
+        return node;
     }
     else if (in -> head != 1){
         even_result = FFT(even);
