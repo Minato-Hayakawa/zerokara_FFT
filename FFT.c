@@ -36,24 +36,37 @@ stack *saparate(stack *in){
 }
 
 stack *FFT(stack *in){
+    stack *even = malloc(sizeof(stack));
+    stack *odd = malloc(sizeof(stack));
     stack *out = malloc (sizeof(stack));
-    stack *saparated;
 
-    if (in -> head ==1);
+    even -> head = in -> head / 2;
+    odd -> head = in -> head / 2;
+
+    for (int i=0; i < in -> head / 2; i++){
+        even -> data[i] = in -> data[2 * i];
+        odd -> data[i] = in -> data[2 * i + 1];
+    }
+
+    if (in -> head ==1){
+        return in;
+    }
     else if (in -> head != 1){
-        saparated = saparate(in);
-        out = FFT(saparated);
+        stack *even_result = FFT(even);
+        stack *odd_result = FFT(odd);
+        for (int i=0; i < even_result -> head; i++){
+            out -> data[i] = even_result -> data[i];
+            out -> data[i + out -> head / 2] = odd_result -> data[i];
+        }
     }
     for (int i=0; i < out-> head / 2; i++){
         double weight_real = cos(-2 * M_PI * i / out -> head);
         double weight_image = sin(-2 * M_PI * i / out -> head);
-        complex *weight = malloc (sizeof(complex));
-        weight -> real = weight_real;
-        weight -> image = weight_image;
-        double odd_real = out -> data[i + out -> head / 2].real * weight -> real
-        - out -> data[i + out -> head / 2].image * weight -> image;
-        double odd_image = out -> data[i + out -> head / 2].image * weight -> real
-        + out -> data[i + out -> head / 2].real * weight -> image;
+        
+        double odd_real = out -> data[i + out -> head / 2].real * weight_real
+        - out -> data[i + out -> head / 2].image * weight_image;
+        double odd_image = out -> data[i + out -> head / 2].image * weight_real
+        + out -> data[i + out -> head / 2].real * weight_image;
         double even_real = out -> data[i].real;
         double even_image = out -> data[i].image;
 
@@ -61,7 +74,5 @@ stack *FFT(stack *in){
         out -> data[i].image = even_image + odd_image;
         out -> data[i + out -> head / 2].real = even_real - odd_real;
         out -> data[i + out -> head / 2].image = even_image - odd_image;
-    }
-    free(saparated);
-    return out;
+    }return out;
 }
