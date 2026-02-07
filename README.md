@@ -28,9 +28,9 @@ This divide-and-conquer approach significantly reduces the overall computational
 The results of the smaller DFTs are combined using the **butterfly operation**.  
 The odd-indexed results are multiplied by the twiddle factors:
 
-\[
+$$
 W_N^k = e^{-i \frac{2\pi}{N} k}
-\]
+$$
 
 and then added to or subtracted from the even-indexed results to produce the final FFT output.
 
@@ -68,8 +68,9 @@ The following test was performed using a sinusoidal input signal to verify the c
 
 The input signal is defined as:
 
-x_n = 100 * sin(2π * n / N),  where N = 8
-
+$$
+x_n = 100  \sin(\frac{2 \pi  n  }{N}),  where N = 8
+$$
 
 **Expected Output:**  
 Large magnitude components in the frequency domain at **k = 1** and **k = N − 1**.
