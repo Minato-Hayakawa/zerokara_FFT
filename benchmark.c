@@ -2,8 +2,8 @@
 #include <time.h>
 int main() {
 
-    int n = 8;
-    int repeat = 100;
+    int n = 64;
+    int repeat = 1000;
     stack *in = malloc(sizeof(stack));
     in->head = n;
 
