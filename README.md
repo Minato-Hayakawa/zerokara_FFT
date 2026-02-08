@@ -121,7 +121,7 @@ Here are the results of comparing the performance of my scratch implementation o
 - OS : Windows 11
 - Compiler : GCC (MinGW)
 
-#### Results ( N = 64 )
+#### Results
 
 | N| DFT Time (ms) | FFT Time (ms) | DFT/FFT | Maximam Error |
 | ---- | ---- | ---- |
@@ -135,11 +135,5 @@ Here are the results of comparing the performance of my scratch implementation o
 | 256 | - | - | - | - |
 | 512 | - | - | - | - |
 
-#### Results ( N = 128)
-
-| Algorithm | Total Time ( 1000 Runs) | Average Time per Run |
-| ---- | ---- | ---- |
-| DFT | - | - |
-| FFT | - | - |
 ## 6. Author
 Minato Hayakawa - TMCIT
