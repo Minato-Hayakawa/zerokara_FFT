@@ -113,18 +113,24 @@ result[7]: -0.000000 + 400.000000i
 </div>
 
 ### Benchmark Results
+
 Here are the results of comparing the performance of my scratch implementation of the Discrete Fourier Transform (DFT) and the Fast Fourier Transform (FFT).
 
 #### Test Environment
+
 - OS : Windows 11
 - Compiler : GCC (MinGW)
 
 #### Results ( N = 64 )
+
 | Algorithm | Toatal Time ( 1000 Runs) | Average Time per Run |
+| ---- | ---- | ---- |
 | DFT | 0.112 s| 0.112 ms|
 | FFT | 0.143 s| 0.143 ms|
 
 #### Results ( N = 128)
+
+| Algorithm | Toatal Time ( 1000 Runs) | Average Time per Run |
 | DFT | - | - |
 | FFT | - | - |
 ## 6. Author
