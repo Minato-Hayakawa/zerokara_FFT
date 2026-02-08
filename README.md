@@ -123,14 +123,14 @@ Here are the results of comparing the performance of my scratch implementation o
 
 #### Results ( N = 64 )
 
-| Algorithm | Toatal Time ( 1000 Runs) | Average Time per Run |
+| Algorithm | Total Time ( 1000 Runs) | Average Time per Run |
 | ---- | ---- | ---- |
 | DFT | 0.112 s| 0.112 ms|
 | FFT | 0.143 s| 0.143 ms|
 
 #### Results ( N = 128)
 
-| Algorithm | Toatal Time ( 1000 Runs) | Average Time per Run |
+| Algorithm | Total Time ( 1000 Runs) | Average Time per Run |
 | ---- | ---- | ---- |
 | DFT | - | - |
 | FFT | - | - |
