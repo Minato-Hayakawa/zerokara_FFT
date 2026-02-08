@@ -135,5 +135,20 @@ Here are the results of comparing the performance of my scratch implementation o
 | 256 | - | - | - | - |
 | 512 | - | - | - | - |
 
+
+## Philosophy Behind This Project
+
+There were two reasons why I decided to implement FFT from scratch this time.
+One was that I wanted to generate the data for next year’s experimental lab report by myself.
+The other was that, when I implemented a CNN from scratch, I encountered FFT for the first time and felt a strong desire not to leave this algorithm as a black box, but to implement it from zero and face its structure directly.
+
+My interest lies not so much in the result that “FFT is fast,” but rather in why it becomes fast — in the structure of the algorithm itself.
+Fortunately, I did not have much trouble implementing the even–odd decomposition. However, I struggled a lot with the implementation of the butterfly operations. Translating the formulas I had seen on paper into actual code forced me to repeat cycles of implementation and revision many times.
+
+After finally completing the FFT implementation, I ran benchmarks to compare it with DFT. The result was somewhat unexpected: when the number of samples was small, DFT was actually faster than FFT. Moreover, when the sample size exceeded N = 124, the recursive function calls became too deep, and my computer could no longer finish the computation in a practical amount of time. As a result, I was not able to demonstrate through measurement that FFT is faster than DFT.
+
+Even so, I do not think this implementation was in vain. By building the FFT algorithm with my own hands, I was able to deepen my understanding of its structure. In addition, the fact that the maximum error between the results of DFT and FFT was zero confirmed that, at least, my implementation was working correctly.
+
+I seem to be the type of person who feels more joy not when “something is completed,” but when I finally understand the process that leads to it. When fragments of my knowledge come together like pieces of a puzzle and what was once a black box becomes transparent, that feeling is, for me, the true pleasure of engineering. This is, for now, my way of doing engineering.
 ## 6. Author
 Minato Hayakawa - TMCIT
