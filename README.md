@@ -123,10 +123,17 @@ Here are the results of comparing the performance of my scratch implementation o
 
 #### Results ( N = 64 )
 
-| Algorithm | Total Time ( 1000 Runs) | Average Time per Run |
+| N| DFT Time (ms) | FFT Time (ms) | DFT/FFT | Maximam Error |
 | ---- | ---- | ---- |
-| DFT | 0.112 s| 0.112 ms|
-| FFT | 0.143 s| 0.143 ms|
+| 2 | 0.001 | 0.005 | 0.200 | 0.000 |
+| 4 | 0.002 | 0.009 | 0.222 | 0.000 |
+| 8 | 0.007 | 0.017 | 0.412 | 0.000 |
+| 16 | 0.009 | 0.031 | 0.290 | 0.000 |
+| 32 | 0.033 | 0.065 | 0.508 | 0.000 |
+| 64 | 0.112 ms| 0.143 ms| 0.783 | 0.000 |
+| 128 | - | - | - | - |
+| 256 | - | - | - | - |
+| 512 | - | - | - | - |
 
 #### Results ( N = 128)
 
