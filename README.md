@@ -100,14 +100,17 @@ result[5]: 0.000000 + 0.000000i
 result[6]: 0.000000 + 0.000000i
 result[7]: -0.000000 + 400.000000i
 ```
-<figure>
+<div align="center">
 <img width="450" height="350" alt="input_and_fft_raw_re_im_fs8" src="https://github.com/user-attachments/assets/db28016c-5aef-43a7-a846-08c1b143ffe0" />
+　<br>
 <figcaption>fig 1: FFT Result raw data</figcaption>
-</figure>
+</div>
 
-<figure>
+<div align="center">
 <img width="450" height="350" alt="input_and_fft_fs8" src="https://github.com/user-attachments/assets/9cb89776-60a7-4fd2-95d5-7fbd999f77d2" />
+  <br>
 <figcaption>fig 1: FFT Result One-sided Spectrum</figcaption>
-<figure>
+</div>
+
 ## 6. Author
 Minato Hayakawa - TMCIT
