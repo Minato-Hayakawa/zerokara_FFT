@@ -109,7 +109,7 @@ result[7]: -0.000000 + 400.000000i
 <div align="center">
 <img width="450" height="350" alt="input_and_fft_fs8" src="https://github.com/user-attachments/assets/9cb89776-60a7-4fd2-95d5-7fbd999f77d2" />
   <br>
-<figcaption>fig 1: FFT Result One-sided Spectrum</figcaption>
+<figcaption>fig 2: FFT Result One-sided Spectrum</figcaption>
 </div>
 
 ### Benchmark Results
