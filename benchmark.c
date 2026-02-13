@@ -2,8 +2,9 @@
 #include <time.h>
 int main() {
 
-    int n = 64;
+    int n = 256;
     int repeat = 1000;
+    double max_error = 0.0;
     stack *in = malloc(sizeof(stack));
     in->head = n;
 
@@ -21,8 +22,18 @@ int main() {
     }
     end = clock();
     double FFT_time = (double)(end - start) / CLOCKS_PER_SEC;
-        printf("N = %d\n", N);
+
+    for(int i=0; i<n; i++){
+        double cabs_DFT = sqrt(DFT(in)-> data[i].real * DFT(in)->data[i].real + DFT(in)->data[i].image * DFT(in)->data[i].image);
+        double cabs_FFT = sqrt(FFT(in)-> data[i].real * FFT(in)->data[i].real + FFT(in)->data[i].image * FFT(in)->data[i].image);
+        double error = cabs_DFT - cabs_FFT;
+        if(error > max_error){
+            max_error = error;
+        }
+    }
+        printf("N = %d\n", n);
     printf("DFT time: %f sec (total for %d runs)\n", DFT_time, repeat);
     printf("FFT time: %f sec (total for %d runs)\n", FFT_time, repeat);
+    printf("Maximam error between DFT and FFT: %20e\n", max_error);
     return 0;
 }
