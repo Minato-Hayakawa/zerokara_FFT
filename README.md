@@ -146,7 +146,9 @@ The other was that, when I implemented a CNN from scratch, I encountered FFT for
 My interest lies not so much in the result that “FFT is fast,” but rather in why it becomes fast — in the structure of the algorithm itself.
 Fortunately, I did not have much trouble implementing the even–odd decomposition. However, I struggled a lot with the implementation of the butterfly operations. Translating the formulas I had seen on paper into actual code forced me to repeat cycles of implementation and revision many times.
 
-After finally completing the FFT implementation, I ran benchmarks to compare it with DFT. The result was somewhat unexpected: when the number of samples was small, DFT was actually faster than FFT. Moreover, when the sample size exceeded N = 124, the recursive function calls became too deep, and my computer could no longer finish the computation in a practical amount of time. As a result, I was not able to demonstrate through measurement that FFT is faster than DFT.
+After finally completing the FFT implementation, I ran benchmarks to compare it with DFT. 
+In the end, the results showed that from a sample size of 
+N=16, the FFT was faster than the DFT.
 
 Even so, I do not think this implementation was in vain. By building the FFT algorithm with my own hands, I was able to deepen my understanding of its structure. In addition, the fact that the maximum error between the results of DFT and FFT was zero confirmed that, at least, my implementation was working correctly.
 
