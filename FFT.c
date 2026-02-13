@@ -37,11 +37,17 @@ stack *saparate(stack *in){
 }
 
 stack *FFT(stack *in){
+
+    if (in -> head ==1){
+        stack *node = malloc(sizeof(stack));
+        node->head = 1;
+        node->data[0] = in->data[0];
+        return node;
+    }
+
     stack *even = malloc(sizeof(stack));
     stack *odd = malloc(sizeof(stack));
     stack *out = malloc (sizeof(stack));
-    stack *even_result;
-    stack *odd_result;
 
     even -> head = in -> head / 2;
     odd -> head = in -> head / 2;
@@ -51,16 +57,9 @@ stack *FFT(stack *in){
         even -> data[i] = in -> data[2 * i];
         odd -> data[i] = in -> data[2 * i + 1];
     }
-
-    if (in -> head ==1){
-        stack *node = malloc(sizeof(stack));
-        node->head = 1;
-        node->data[0] = in->data[0];
-        return node;
-    }
     
-    even_result = FFT(even);
-    odd_result = FFT(odd);
+    stack *even_result = FFT(even);
+    stack *odd_result = FFT(odd);
 
     free(even);
     free(odd);
