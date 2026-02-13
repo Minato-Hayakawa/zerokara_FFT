@@ -1,4 +1,4 @@
-#define N 1000
+#define N 10000
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>

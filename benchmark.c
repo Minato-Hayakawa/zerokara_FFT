@@ -2,7 +2,7 @@
 #include <time.h>
 int main() {
 
-    int n = 256;
+    int n = 1024;
     int repeat = 1000;
     double max_error = 0.0;
     stack *in = malloc(sizeof(stack));
