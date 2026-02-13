@@ -1,6 +1,6 @@
 # FFT Scratch Implementation in C
 
-This repository contains a from-scratch implementation of the Fast Fourier Transform (FFT) algorithm written in C. The project was developed to gain a deeper understanding of the Cooley–Tukey algorithm and to demonstrate how the computational complexity of the Discrete Fourier Transform (DFT) can be reduced from **O(N²)** to **O(N log N)**.
+This repository contains a from-scratch implementation of the Fast Fourier Transform (FFT) in C. The project was developed to gain a deeper understanding of the Cooley–Tukey algorithm and to demonstrate how the computational complexity of the Discrete Fourier Transform (DFT) can be reduced from **O(N²)** to **O(N log N)**.
 
 ---
 
@@ -90,7 +90,7 @@ data[7]: -70.710678 + 0.000000i
 
 ### FFT Result
 
-```bush
+```bash
 result[0]: 0.000000 + 0.000000i
 result[1]: 0.000000 + -400.000000i
 result[2]: 0.000000 + -0.000000i
@@ -123,7 +123,7 @@ Here are the results of comparing the performance of my scratch implementation o
 
 #### Results
 
-| N | DFT Time (ms) | FFT Time (ms) | DFT/FFT | Maximam Error |
+| N | DFT Time (ms) | FFT Time (ms) | DFT/FFT | Maximum Error |
 | ---- | ---- | ---- | ---- | ---- |
 | 2 | 0.002 | 0.003 | 1.500 | 0.000 |
 | 4 | 0.003 | 0.003 | 0.222 | 0.000 |
@@ -147,10 +147,12 @@ My interest lies not so much in the result that “FFT is fast,” but rather in
 Fortunately, I did not have much trouble implementing the even–odd decomposition. However, I struggled a lot with the implementation of the butterfly operations. Translating the formulas I had seen on paper into actual code forced me to repeat cycles of implementation and revision many times.
 
 After finally completing the FFT implementation, I ran benchmarks to compare it with DFT. 
+For small N, the FFT can be slower due to recursion and memory allocation overhead.
 In the end, the results showed that from a sample size of 
 N=16, the FFT was faster than the DFT.
 
 Even so, I do not think this implementation was in vain. By building the FFT algorithm with my own hands, I was able to deepen my understanding of its structure. In addition, the fact that the maximum error between the results of DFT and FFT was zero confirmed that, at least, my implementation was working correctly.
+Although the results matched the naive DFT in these tests, small numerical errors may occur due to the use of double-precision floating-point arithmetic.
 
 I seem to be the type of person who feels more joy not when “something is completed,” but when I finally understand the process that leads to it. When fragments of my knowledge come together like pieces of a puzzle and what was once a black box becomes transparent, that feeling is, for me, the true pleasure of engineering. This is, for now, my way of doing engineering.
 ## 6. Author
