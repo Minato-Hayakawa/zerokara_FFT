@@ -58,10 +58,9 @@ stack *FFT(stack *in){
         node->data[0] = in->data[0];
         return node;
     }
-    else if (in -> head != 1){
-        even_result = FFT(even);
-        odd_result = FFT(odd);
-    }
+    
+    even_result = FFT(even);
+    odd_result = FFT(odd);
 
     free(even);
     free(odd);
